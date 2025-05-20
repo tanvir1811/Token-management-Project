@@ -1,0 +1,23 @@
+<div class="container d-flex justify-content-center align-items-center" style="height: 60vh;">
+  <div class="card shadow" style="width: 400px; height: 480px; background-color: rgb(191, 233, 247);">
+    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+      <h1 class="bg-primary text-white p-3 rounded mb-4">Enter your ID</h1>
+      <input class="text-black p-3 rounded mb-4" style="background-color: rgb(237, 243, 243);"  #myInput type="text" placeholder="Enter value">
+      <button class="btn btn-primary px-4 py-2" (click)="submit(myInput.value)">Enter</button>
+    </div>
+  </div>
+  
+</div>
+
+<div class="container d-flex justify-content-center align-items-center" style="height: 60vh;">
+   <div class="card shadow" style="width: 350px; height: 300px; background-color: #c4e9b0;">
+    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+      <h1 class=" text-white p-1 rounded mb-4"style="background-color: #45c43b;">Token Number</h1>
+      <div class="shadow d-flex justify-content-center align-items-center"
+           style="width: 200px; height: 50px; background-color: rgb(247, 250, 251); border-radius: 5px;">
+        <span class="fw-bold fs-4 text-dark">{{studentTokenNumber}}</span>
+      </div>
+    </div>
+  </div>
+  </div>
+  
