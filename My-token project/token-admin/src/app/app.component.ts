@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MyPortfolioService } from './services/my-portfolio.service';
+
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { MyPortfolioService } from './services/my-portfolio.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 
   id1 = 'Empty';
   id2 = 'Empty';
@@ -23,6 +24,64 @@ export class AppComponent {
   token5 = 0;
 
   constructor(private tokenService: MyPortfolioService) {}
+   ngOnInit(): void {
+  this.tokenService.getNextToken().subscribe({
+        next: response => {
+          this.id1 = response?.studentId ?? 'Empty';
+          this.token1 = response?.tokenNumber ?? 0;
+        },
+        error: () => {
+          this.id1 = 'Empty';
+          this.token1 = 0;
+        }
+      });
+
+      this.tokenService.getNextToken().subscribe({
+        next: response => {
+          this.id2 = response?.studentId ?? 'Empty';
+          this.token2 = response?.tokenNumber ?? 0;
+        },
+        error: () => {
+          this.id2 = 'Empty';
+          this.token2 = 0;
+        }
+      });
+this.tokenService.getNextToken().subscribe({
+        next: response => {
+          this.id3 = response?.studentId ?? 'Empty';
+          this.token3 = response?.tokenNumber ?? 0;
+        },
+        error: () => {
+          this.id3 = 'Empty';
+          this.token3 = 0;
+        }
+      });
+
+      this.tokenService.getNextToken().subscribe({
+        next: response => {
+          this.id4 = response?.studentId ?? 'Empty';
+          this.token4 = response?.tokenNumber ?? 0;
+        },
+        error: () => {
+          this.id4 = 'Empty';
+          this.token4 = 0;
+        }
+      });
+       this.tokenService.getNextToken().subscribe({
+        next: response => {
+          this.id5 = response?.studentId ?? 'Empty';
+          this.token5 = response?.tokenNumber ?? 0;
+        },
+        error: () => {
+          this.id5 = 'Empty';
+          this.token5 = 0;
+        }
+      });
+
+
+ 
+  }
+
 
   on1(): void {
     if (this.id1 === 'Empty') {
@@ -43,6 +102,7 @@ export class AppComponent {
             next: response => {
               this.id1 = response?.studentId ?? 'Empty';
               this.token1 = response?.tokenNumber ?? 0;
+              window.location.reload();
             },
             error: () => {
               this.id1 = 'Empty';
@@ -73,6 +133,7 @@ export class AppComponent {
             next: response => {
               this.id2 = response?.studentId ?? 'Empty';
               this.token2 = response?.tokenNumber ?? 0;
+              window.location.reload();
             },
             error: () => {
               this.id2 = 'Empty';
@@ -103,6 +164,7 @@ export class AppComponent {
             next: response => {
               this.id3 = response?.studentId ?? 'Empty';
               this.token3 = response?.tokenNumber ?? 0;
+              window.location.reload();
             },
             error: () => {
               this.id3 = 'Empty';
@@ -133,6 +195,7 @@ export class AppComponent {
             next: response => {
               this.id4 = response?.studentId ?? 'Empty';
               this.token4 = response?.tokenNumber ?? 0;
+              window.location.reload();
             },
             error: () => {
               this.id4 = 'Empty';
@@ -163,6 +226,7 @@ export class AppComponent {
             next: response => {
               this.id5 = response?.studentId ?? 'Empty';
               this.token5 = response?.tokenNumber ?? 0;
+              window.location.reload();
             },
             error: () => {
               this.id5 = 'Empty';
